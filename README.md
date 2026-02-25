@@ -55,7 +55,7 @@ All skills support **multiple tickers** — pass a comma-separated list (e.g., `
 ### Option A: Install Script
 
 ```bash
-git clone https://github.com/zhalgasserimbetov/claude-finance-skills.git
+git clone https://github.com/kezsmeister/claude-finance-skills.git
 cd claude-finance-skills
 ./install.sh
 ```
