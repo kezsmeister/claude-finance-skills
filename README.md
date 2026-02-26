@@ -4,6 +4,8 @@ Custom [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skills that
 
 All skills support **multiple tickers** — pass a comma-separated list (e.g., `/annual-eps AAPL,MSFT,GOOG`) and each ticker is processed in parallel, then combined into a single comparison table.
 
+[![Watch the demo](assets/demo-thumbnail.png)](https://github.com/kezsmeister/claude-finance-skills/blob/main/finance-intro-voiceover.mp4)
+
 ## Skill Catalog
 
 | Skill | Data Extracted | Source Page | Example |
@@ -36,6 +38,12 @@ All skills support **multiple tickers** — pass a comma-separated list (e.g., `
    ```bash
    # macOS
    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
+
+   # Linux
+   google-chrome --remote-debugging-port=9222
+
+   # Windows (PowerShell)
+   & "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222
    ```
 3. **Yahoo Finance MCP server** — required by the `cashflow-chart` skill (used to fetch data via API before falling back to Chrome scraping):
    ```json
@@ -49,6 +57,7 @@ All skills support **multiple tickers** — pass a comma-separated list (e.g., `
    }
    ```
 4. **Yahoo Finance Premium** (recommended) — some metrics like Weighted Average Diluted Shares only show the full 10-year history with a Premium subscription. Free accounts still work but may return fewer years.
+5. **Model compatibility** — these skills work with any Claude model, but **Claude Opus** is recommended for the most reliable data extraction and formatting.
 
 ## Installation
 
@@ -117,6 +126,8 @@ Generates an interactive dark-themed HTML file with:
 - Summary KPI cards (OCF CAGR, FCF Conversion, etc.)
 - Full data table
 - Key observations
+
+![Cash Flow Chart Example](assets/cashflow-chart-example.png)
 
 The chart is saved locally and opened in Chrome for preview.
 
